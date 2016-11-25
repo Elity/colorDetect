@@ -1,6 +1,6 @@
 # colorDetect
 
-> Transfer rgb colors to human color
+> Transfer rgb color to human color
 
 ### usage
 
