@@ -1,13 +1,13 @@
 /*
 Source PHP Code:https://github.com/Elity/colorDetect
 Examp:
-var cd = ColorDetect({    //init
-'ff0000': 'red',
-'00ff00': 'green',
-'0000ff': 'blue'
+var cd = ColorDetect({ 
+  'ff0000': 'red',
+  '00ff00': 'green',
+  '0000ff': 'blue'
 });
-cd.detect('ff0000');   //red
-cd.detect('#aa0000');   //red
+console.log(cd.detect('ff0000'));   //red
+console.log(cd.detect('#aa0000'));   //red
  */
 
 var ColorDetect = (function () {
