@@ -1,15 +1,14 @@
 /*
 Source PHP Code:https://github.com/Elity/colorDetect
 Examp:
-  var cd = ColorDetect({    //init
-    'ff0000': 'red',
-    '00ff00': 'green',
-    '0000ff': 'blue'
-  });
-  cd.detect('ff0000');   //red
-  cd.detect('#aa0000');   //red
-*/
-
+var cd = ColorDetect({    //init
+'ff0000': 'red',
+'00ff00': 'green',
+'0000ff': 'blue'
+});
+cd.detect('ff0000');   //red
+cd.detect('#aa0000');   //red
+ */
 
 var ColorDetect = (function () {
 	function _(colorConfig) {
@@ -18,12 +17,13 @@ var ColorDetect = (function () {
 	}
 
 	_.prototype.detect = function (rgbColor) {
-		rgbColor = rgbColor.replace(/[\s#]+/,'');
-    if(!rgbColor.match(/^[0-9a-f]{6}$/i)){
-      throw new Error('Error color:' + rgbColor)
-    }
+		rgbColor = rgbColor.replace(/[\s#]+/, '');
+		if (!rgbColor.match(/^[0-9a-f]{6}$/i)) {
+			throw new Error('Error color:' + rgbColor)
+		}
 		labColorArr = this.labCache[rgbColor] || this.rgb2lab(rgbColor);
-		var minDeltaE = 101,similarRgb;
+		var minDeltaE = 101,
+		similarRgb;
 		for (var everRgb in this.colorConfig) {
 			var thelabColorArr = this.labCache[everRgb] || this.rgb2lab(everRgb),
 			theDeltaE = this.deltaE(labColorArr, thelabColorArr);
