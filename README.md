@@ -32,3 +32,4 @@ var cd = ColorDetect({    //configuration (more config members are more accurate
   alert(cd.detect('#aa0000'));   //red
 ```
 
+[demo](https://jsfiddle.net/a408115319/hexnyLt0/)
